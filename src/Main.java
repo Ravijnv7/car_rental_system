@@ -97,6 +97,23 @@ public class Main {
             }
         }
 
+        void returnCar(Car car){
+            car.carReturn();
+            Rental rentalToRemove=null;
+            for(Rental rental:rentals){
+                if(rental.getCar()==car){
+                    rentalToRemove=rental;
+                    break;
+                }
+            }
+            if(rentalToRemove!=null){
+                rentals.remove(rentalToRemove);
+            }
+            else{
+                System.out.println("car is not rented");
+            }
+        }
+
 
 
     }
