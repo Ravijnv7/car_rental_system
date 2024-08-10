@@ -87,13 +87,16 @@ public class Main {
         void addCustomer(Customer customer){
             customers.add(customer);
         }
-        void rentCar(Car car ){
+        void rentCar(Car car,Customer customer,int days){
             if(car.isAvailable){
-
-
+                car.rent();
+                rentals.add(new Rental(car,customer,days));
             }
-
+            else{
+                System.out.println("car is not available for rent");
+            }
         }
+
 
 
     }
